@@ -1,3 +1,11 @@
+/*Ye User model basically users ke data ko manage karta hai jo system ya application mein register karte hain. Is model ka kaam hai user-related operations ko handle karna, jaise:
+
+1. User Registration: Jab user apna account banata hai, toh yeh model uska username, email, password, etc. store karta hai. Password ko bcrypt se hash karke database mein save karta hai taaki wo secure rahe.
+
+2. User Authentication: Jab user login karta hai, toh password ko bcrypt ke through compare karke correctness check kiya jata hai. Agar password match hota hai toh user ko Access Token (JWT) aur Refresh Token generate karke diya jata hai. Yeh tokens user ko authenticate karte hain, taaki user ki identity verify ho sake bina baar-baar login karne ke.
+
+3. Session Management: Refresh token ke zariye session ko extend kiya ja sakta hai bina dobara login kiye. Access token ki expiry ke baad refresh token ko use karke naya access token generate kiya ja sakta hai.*/
+
 import mongoose, { Schema } from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
