@@ -15,4 +15,10 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" })); //Ye middleware 
 app.use(express.static("public")); //Ye Express ko batata hai ki public folder ke andar ke files (images, CSS, JS) ko publicly serve karo.
 app.use(cookieParser()); //Ye middleware cookies ko read karta hai jo client request me hoti hain.
 
+//Routes Import
+import userRouter from "./routes/user.routes.js";
+
+//Routes Declaration
+app.use("/api/v1/users", userRouter);
+
 export { app };
